@@ -1,0 +1,89 @@
+#backToTop {
+  position: fixed;
+  bottom: 107px;
+  right: 6px;
+  font-size: 20px;
+}
+.centered {
+  margin: 0px auto;
+  float: none;
+}
+body {
+  background: #E9EBEE;
+}
+header .navbar-default {
+  margin-bottom: 5px!important;
+  border-bottom: 3px solid #d5d9de;
+  background: #4485F5 !important;
+}
+header .navbar-default a {
+  color: #fff!important;
+}
+header .navbar-default .navbar-brand {
+  font-size: 25px;
+  font-weight: bold;
+}
+.box {
+  padding: 10px;
+  border: 1px solid #d5d9de;
+  border-bottom: 2px solid #d5d9de;
+  border-radius: 4px;
+}
+.white-bg {
+  background: #fff!important;
+}
+.sidebar {
+  padding-right: 0px;
+}
+.sidebar .box {
+  background: #4485F5 !important;
+  padding: 0;
+}
+.sidebar .list-group .list-group-item {
+  background: #4485F5 !important;
+  color: #d5e4fd;
+  border: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #2c75f4 !important;
+}
+.sidebar .list-group .list-group-item:hover {
+  background: #2c75f4 !important;
+}
+.sidebar .list-group .active {
+  background: #1465f2 !important;
+}
+ul.home-tiles {
+  margin: 0px;
+  padding: 0px;
+  clear: both;
+  margin-bottom: 10px;
+}
+ul.home-tiles li {
+  width: 20%;
+  height: 80px;
+  display: inline-block;
+  float: left;
+  text-align: center;
+  padding: 5px;
+  background: #999;
+  color: #fff;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+ul.home-tiles li p {
+  color: #fff;
+}
+ul.home-tiles li h2 {
+  margin: 0px;
+  font-size: 25px;
+  color: #fff;
+}
+.color1 {
+  background: orange!important;
+}
+/* Mobile first queries */
+/* Larger than mobile */
+/* Larger than phablet */
+/* Larger than tablet */
+/* Larger than desktop */
+/* Larger than Desktop HD */
