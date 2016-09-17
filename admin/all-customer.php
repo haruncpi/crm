@@ -15,6 +15,10 @@ include_once "header.php";
 							<h3 class="panel-title">Customers</h3>
 						</div>
 						<div class="panel-body">
+							<?php 
+								$sql="select * from customers";
+								$results=$con->query($sql);
+							?>
 							<table class="table table-condensed table-bordered">
 								<thead>
 									<th>ID</th>
@@ -24,13 +28,15 @@ include_once "header.php";
 									<th>ACTION</th>
 								</thead>
 								<tbody>
+									<?php while($customer=$results->fetch_object()):?>
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td><?=$customer->id?></td>
+										<td><?=$customer->name?></td>
+										<td><?=$customer->phone?></td>
+										<td><?=$customer->email?></td>
 										<td></td>
 									</tr>
+								<?php endwhile; ?>
 								</tbody>
 							</table>
 						</div>

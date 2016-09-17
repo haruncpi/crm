@@ -1,0 +1,28 @@
+customers
+=========
+	id
+	name
+	email
+	phone
+	address
+	date_of_birth
+
+groups
+======
+	id
+	name
+	description
+
+
+group_datas
+===========
+	id
+	group_id
+	customer_id
+
+users
+=====
+	id
+	name
+	email
+	password
