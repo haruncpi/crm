@@ -2,13 +2,18 @@
 require_once("../config.php");
 require_once BASE_PATH."/connection.php";
 require_once BASE_PATH."/functions.php";
+
+sessionStart();
+if(!isLoggedIn()){
+	redirectTo(BASE_URL."/admin/login.php");
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>CRM | Customer Relationship Management</title>
 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -42,7 +47,9 @@ require_once BASE_PATH."/functions.php";
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Hello, Admin! <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Logout</a></li>
+										<li>
+											<a href="<?=BASE_URL."/admin/logout.php" ?>">Logout</a>
+										</li>
 										
 									</ul>
 								</li>

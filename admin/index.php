@@ -9,6 +9,7 @@ include_once "header.php";
 			<!-- sidebar -->
 			<!-- content -->
 			<div class="col-md-10 content">
+				
 				<div class="box white-bg">
 					<ul class="home-tiles">
 						<li class="color1">
