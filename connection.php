@@ -1,8 +1,8 @@
 <?php
-$con = new mysqli(SERVER, USERNAME, PASSWORD);
-if (!$con) {
-    echo "Database Connection fail";
-    exit;
-} else {
-    $con->select_db(DATABASE);
+try{
+    $con=new PDO("mysql:host=".SERVER.";dbname=".DATABASE."",USERNAME,PASSWORD);
+    $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+}
+catch(PDOException $e){
+    $e->getMessage();
 }

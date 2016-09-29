@@ -14,17 +14,18 @@ function login($email, $password)
 {
     if (isset($email) && isset($password)) {
         global $con;
-        $stmt = $con->prepare("SELECT * FROM users where email=? and password=? limit 1");
-        $stmt->bind_param("ss", $email, $password);
+        $stmt = $con->prepare("SELECT * FROM users where email=:email and password=:password limit 1");
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":password", $password);
         $stmt->execute();
 
-        $user = $stmt->get_result()->fetch_object();
+        $user = $stmt->fetchAll(PDO::FETCH_OBJ);
         
         if (count($user)==1) {
             // try {
 
             sessionStart();
-            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_id'] = $user['id'];
             return true;
             // } catch (\Exception $e) {
             //     logout();
