@@ -18,11 +18,11 @@ include_once "header.php";
 							<form action="" method="POST">
 								<div class="form-group">
 									<p>Name</p>
-									<p><input type="text" name="name" class="form-control"></p>
+									<p><input type="text" name="name" class="form-control" required></p>
 								</div>
 								<div class="form-group">
 									<p>Email</p>
-									<p><input type="text" name="email" class="form-control"></p>
+									<p><input type="email" name="email" class="form-control" required></p>
 								</div>
 								<div class="form-group">
 									<p>Phone</p>
@@ -37,13 +37,37 @@ include_once "header.php";
 									<p><input type="text" name="date_of_birth" class="form-control"></p>
 								</div>
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary">Save</button>
+									<input name="submit" type="submit" class="btn btn-primary" value="Save">
 								</div>
 	
 							</form>
 							<?php 
-								$sql="select * from customers";
-								$results=$con->query($sql);
+								
+								if(isset($_POST['submit']))
+								{
+									$name=$_POST['name'];
+									$email=$_POST['email'];
+									$phone=$_POST['phone'];
+									$address=$_POST['address'];
+									$date_of_birth=$_POST['date_of_birth'];
+
+									$stmt=$con->prepare("INSERT INTO customers(name,email,phone,address,date_of_birth) values(:name,:email,:phone,:address,:date_of_birth)");
+									$stmt->bindParam(':name',$name);
+									$stmt->bindParam(':email',$email);
+									$stmt->bindParam(':phone',$phone);
+									$stmt->bindParam(':address',$address);
+									$stmt->bindParam(':date_of_birth',$date_of_birth);
+
+
+									if($stmt->execute()){
+										redirectTo("all-customer.php");
+									}
+									else{
+										echo "Data inser fail";
+									}
+
+								}
+
 							?>
 							
 						</div>

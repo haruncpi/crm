@@ -19,13 +19,13 @@ function login($email, $password)
         $stmt->bindParam(":password", $password);
         $stmt->execute();
 
-        $user = $stmt->fetchAll(PDO::FETCH_OBJ);
+        $user = $stmt->fetchAll();
         
         if (count($user)==1) {
             // try {
 
             sessionStart();
-            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_id'] = $user[0]['id'];
             return true;
             // } catch (\Exception $e) {
             //     logout();
@@ -52,4 +52,15 @@ function isLoggedIn()
     } else {
         return false;
     }
+}
+
+function countVal($tableName)
+{
+    global $con;
+    $stmt=$con->prepare("SELECT count(*) FROM customers");
+
+    $stmt->execute();
+    $stmt->fetchObject();
+    return $stmt->rowCount();
+
 }

@@ -14,7 +14,7 @@ include_once "header.php";
 					<ul class="home-tiles">
 						<li class="color1">
 							<p>Customers</p>
-							<h2>123</h2>
+							<h2><?=countVal('customers')?></h2>
 						</li>
 						<li class="color2">
 							<p>Groups</p>
@@ -22,6 +22,8 @@ include_once "header.php";
 						</li>
 					</ul>
 				</div>
+
+
 			</div>
 			<!-- content -->
 		</div>

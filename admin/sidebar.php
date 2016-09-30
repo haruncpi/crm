@@ -4,8 +4,8 @@
 		  <a href="#" class="list-group-item active"><i class="fa fa-dashboard"></i> Dasboard</a>
 		  <a href="all-customer.php" class="list-group-item"><i class="fa fa-user-md"></i> All Customer</a>
 		  <a href="new-customer.php" class="list-group-item"><i class="fa fa-plus-square"></i> New Customer</a>
-		  <a href="#" class="list-group-item"><i class="fa fa-group"></i> Group</a>
-		  <a href="#" class="list-group-item"><i class="fa fa-plus-square"></i> New Group</a>
+		  <a href="all-group.php" class="list-group-item"><i class="fa fa-group"></i> Group</a>
+		  <a href="new-group.php" class="list-group-item"><i class="fa fa-plus-square"></i> New Group</a>
 		</div>
 	</div>
 </div>
